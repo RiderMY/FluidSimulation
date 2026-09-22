@@ -3,6 +3,7 @@
 #pragma comment(lib, "glfw3.lib")
 #pragma comment(lib, "opengl32.lib")
 
+#include <functional>
 #include <glad/glad.h>
 #include <glfw3.h>
 #include <iostream>
@@ -18,7 +19,7 @@ typedef std::unique_ptr<GLFWwindow, DestroyGLFWwindow> Window;
 
 bool createWindow(Window &window, const std::string &title, const int &width, const int &height);
 
-void runWindow(Window &window);
+void runWindow(Window &window, std::function<void(float)> update);
 
 }
 
